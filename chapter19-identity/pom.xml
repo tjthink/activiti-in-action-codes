@@ -42,7 +42,7 @@
         <dependency>
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-jpa</artifactId>
-            <version>1.5.2.RELEASE</version>
+            <version>1.11.23.RELEASE</version>
             <exclusions>
                 <exclusion>
                     <groupId>junit</groupId>
@@ -333,19 +333,19 @@
 						<version>1.7</version>
 						<configuration>
 							<target>
-								<property file="src/main/resources/application.properties" />
-								<property name="sql.type" value="${sql.type}" />
-								<property name="dbunit.datatype" value="org.dbunit.ext.h2.H2DataTypeFactory" />
+								<property file="src/main/resources/application.properties"/>
+								<property name="sql.type" value="${sql.type}"/>
+								<property name="dbunit.datatype" value="org.dbunit.ext.h2.H2DataTypeFactory"/>
 
-								<taskdef name="dbunit" classname="org.dbunit.ant.DbUnitTask" classpathref="maven.runtime.classpath" />
+								<taskdef name="dbunit" classname="org.dbunit.ant.DbUnitTask" classpathref="maven.runtime.classpath"/>
 								
 								<!-- add init datas -->
 								<dbunit driver="${jdbc.driver}" url="${jdbc.url}" userid="${jdbc.username}" password="${jdbc.password}">
 									<dbconfig>
-										<property name="datatypeFactory" value="${dbunit.datatype}" />
+										<property name="datatypeFactory" value="${dbunit.datatype}"/>
 									</dbconfig>
-									<classpath refid="maven.runtime.classpath" />
-									<operation type="CLEAN_INSERT" src="src/main/resources/data/identity-data.xml" format="flat" transaction="true" />
+									<classpath refid="maven.runtime.classpath"/>
+									<operation type="CLEAN_INSERT" src="src/main/resources/data/identity-data.xml" format="flat" transaction="true"/>
 								</dbunit>
 							</target>
 						</configuration>
